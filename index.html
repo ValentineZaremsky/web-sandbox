@@ -5,9 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="index.css" />
         <title>Web Sandbox</title>
+
+        <!-- Перед розгортанням на продакшн, замініть "development.js" на "production.min.js". -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script src="login.js"></script>
         <script src="index.js"></script>
     </head>
     <body>
+        <div id="authorize-window">
+            <div class="overlay"></div>
+            <form class="login-form">
+                <fieldset>
+                    <legend>Log in</legend>
+                    <p><label for="inputLogin">Login</label></p>
+                    <p><input id="inputLogin" placeholder="Your login"></p>
+                    <p><label for="inputPassword">Password</label></p>
+                    <p><input type="password" id="inputPassword" placeholder="Your password"></p>
+                    <p><label><input type="checkbox"> Remember me</label></p>
+                    <p><button type="submit">Enter</button></p>
+                </fieldset>
+            </form>
+        </div>
         <div class="site">
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 

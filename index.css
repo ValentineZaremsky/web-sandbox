@@ -148,6 +148,64 @@ General styles
 	border-bottom: 1px solid white;
 }
 
+#authorize-window {
+	/* display: none; */
+	position: fixed;
+	left: 0; right: 0;
+	top: 0; bottom: 0;
+	height: 23rem;
+	margin: auto;
+	z-index: 1;
+}
+
+.overlay {
+	position: fixed;
+	left: 0; right: 0; top: 0; bottom: 0;
+	background: rgba(0, 0, 0, 0.66);
+}
+
+.login-form {
+	position: absolute;
+	background: #ddd;
+	min-width: 16rem;
+	max-width: 24rem;
+	padding: 1.5rem;
+	height: 16rem;
+	left: 0; right: 0;
+	margin: 2rem auto;
+}
+
+.login-form legend {
+	text-align: center;
+	font-size: 1.2em;
+	padding: 0 .5rem;
+}
+
+.login-form p {
+	padding: .15em 0;
+}
+
+.login-form label {
+	font-size: .9em;
+}
+
+.login-form input {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 .5em;
+}
+
+.login-form input[type="checkbox"] {
+	width: auto;
+}
+
+.login-form button {
+	display: block;
+	min-width: 50%;
+	margin: 0 auto;
+}
+
+
 /*--------------------------------------------------------------
 If no grid support, limit width to 50em and center align
 --------------------------------------------------------------*/
