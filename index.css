@@ -148,12 +148,12 @@ General styles
 	border-bottom: 1px solid white;
 }
 
-#authorize-window {
-	/* display: none; */
+#auth-window {
+	display: none;
 	position: fixed;
 	left: 0; right: 0;
 	top: 0; bottom: 0;
-	height: 23rem;
+	height: 24rem;
 	margin: auto;
 	z-index: 1;
 }
@@ -164,13 +164,20 @@ General styles
 	background: rgba(0, 0, 0, 0.66);
 }
 
+.error {
+	display: none;
+	text-align: right;
+	font-size: .9em;
+	color: red;
+}
+
 .login-form {
 	position: absolute;
 	background: #ddd;
 	min-width: 16rem;
 	max-width: 24rem;
 	padding: 1.5rem;
-	height: 16rem;
+	height: 17rem;
 	left: 0; right: 0;
 	margin: 2rem auto;
 }
@@ -182,7 +189,9 @@ General styles
 }
 
 .login-form p {
-	padding: .15em 0;
+	display: flex;
+	justify-content: space-between;
+	padding: .2em 0;
 }
 
 .login-form label {

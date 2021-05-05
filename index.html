@@ -17,17 +17,31 @@
         <script src="index.js"></script>
     </head>
     <body>
-        <div id="authorize-window">
+        <div id="auth-window">
             <div class="overlay"></div>
             <form class="login-form">
                 <fieldset>
                     <legend>Log in</legend>
-                    <p><label for="inputLogin">Login</label></p>
-                    <p><input id="inputLogin" placeholder="Your login"></p>
-                    <p><label for="inputPassword">Password</label></p>
-                    <p><input type="password" id="inputPassword" placeholder="Your password"></p>
-                    <p><label><input type="checkbox"> Remember me</label></p>
-                    <p><button type="submit">Enter</button></p>
+                    <p>
+                        <label for="inputLogin">Login</label>
+                        <span id="loginError" class="error">Illegal login</span>
+                    </p>
+                    <p>
+                        <input id="inputLogin" placeholder="Your login" onchange="checkLogin()">
+                    </p>
+                    <p>
+                        <label for="inputPassword">Password</label>
+                        <span id="passwordError" class="error">Wrong password</span>
+                    </p>
+                    <p>
+                        <input type="password" id="inputPassword" placeholder="Your password" onchange="checkPassword()">
+                    </p>
+                    <p>
+                        <label><input type="checkbox"> Remember me</label>
+                    </p>
+                    <p>
+                        <button id="submitForm" type="submit" onclick="submitLogin()">Enter</button>
+                    </p>
                 </fieldset>
             </form>
         </div>
@@ -37,7 +51,7 @@
             <header class="masthead">
                 <div class="authorize">
                     <a href="#SignIn">Sign in</a>
-                    <a href="#LogIn">Log in</a>
+                    <a href="#LogIn" onclick="showLogin()">Log in</a>
                 </div>
                 <h2 class="site-title">My Web Sandbox</h2>
             </header><!-- .masthead -->
@@ -84,7 +98,7 @@
                 </div>
             </aside>
 
-            <aside class="twin" id="LogIn">
+            <aside class="twin">
                 This should take up half the space
             </aside>
             <aside class="twin" id="SignIn">
