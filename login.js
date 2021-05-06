@@ -17,24 +17,46 @@ function submitLogin() {
 
 function checkLogin() {
   let value = document.getElementById('inputLogin').value;
+  let elem = document.getElementById('loginError');
+  let isOk, message;
 
   if (value === "") {
-    document.getElementById('loginError').style.display = "inline";
-    return false;
+    message = "Empty login";
+    isOk = false;
+  } else if (!validateEmail(value)) {
+    message = "Wrong email";
+    isOk = false;
   } else {
-    document.getElementById('loginError').style.display = "none";
-    return true;
+    message = "All right";
+    isOk = true;
   }
+
+  elem.textContent = message;
+  elem.style.display = isOk ? "none" : "inline";
+
+  return isOk;
 }
 
 function checkPassword() {
   let value = document.getElementById('inputPassword').value;
+  let elem = document.getElementById('passwordError');
+  let isOk, message;
 
   if (value === "") {
-    document.getElementById('passwordError').style.display = "inline";
-    return false;
+    message = "Empty password";
+    isOk = false;
   } else {
-    document.getElementById('passwordError').style.display = "none";
-    return true;
+    message = "All right";
+    isOk = true;
   }
+
+  elem.textContent = message;
+  elem.style.display = isOk ? "none" : "inline";
+
+  return isOk;
+}
+
+function validateEmail(email) {
+  const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(String(email).toLowerCase());
 }
