@@ -148,6 +148,18 @@ General styles
 	border-bottom: 1px solid white;
 }
 
+#authors {
+	list-style-type: none;
+	padding-inline-start: 0;
+}
+
+#authors li img{
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	margin: 0 8px;
+}
+
 #auth-window {
 	display: none;
 	position: fixed;
