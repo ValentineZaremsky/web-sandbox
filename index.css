@@ -153,6 +153,11 @@ General styles
 	padding-inline-start: 0;
 }
 
+#authors a {
+  text-decoration: none;
+	color: #112255;
+}
+
 #authors li img{
 	display: inline-block;
 	width: 36px;
