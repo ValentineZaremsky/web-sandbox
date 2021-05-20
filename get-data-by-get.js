@@ -7,14 +7,14 @@ fetch(url)
 .then(function(data) {
   let authors = Array.from(data.results);
 
-  return authors.map(function(author) {
+  return authors.map((author) => {
     let li = createNode('li');
     let a = createNode('a');
     let img = createNode('img');
     let span = createNode('span');
 
     a.href = `mailto:${author.email}`
-    img.src = author.picture.large;
+    img.src = author.picture.medium;
     span.innerHTML = `${author.name.first} ${author.name.last}`;
 
     append(a, img);
@@ -23,7 +23,7 @@ fetch(url)
     append(ul, li);
   })
 })
-.catch(function(error) {
+.catch((error) => {
   console.log(error);
 });
 

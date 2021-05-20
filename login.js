@@ -1,5 +1,3 @@
-console.log("Hello!");
-
 function showLogin() {
   console.log("Log in please!");
   document.getElementById('auth-window').style.display = 'block';
