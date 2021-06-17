@@ -1,6 +1,6 @@
 const ul = document.getElementById('authors');
 
-const url = 'https://randomuser.me/api/?results=16';
+const url = 'https://randomuser.me/api/?results=10';
 
 fetch(url)
 .then((resp) => resp.json())
